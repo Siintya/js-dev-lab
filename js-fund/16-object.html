@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #16</title>
+</head>
+<body>
+    <!-- Type Data Object
+    Adalah tipe data yang digunakan untuk menyimpan 
+    kumpulan nilai dalam bentuk pasangan key-value. 
+    Object dapat menyimpan berbagai jenis data, 
+    termasuk angka, string, boolean, dan bahkan array 
+    dan object lainnya.
+    - associative array: Object dapat digunakan sebagai associative array, 
+      di mana key adalah string yang digunakan untuk mengakses nilai.
+    - method: Object dapat memiliki fungsi sebagai nilai, yang disebut method.
+    -->
+
+    <script type="text/javascript">
+        // #Mendeklarasikan Object
+        /* Object Literal: cara paling umum untuk membuat object 
+        dg menggunakan tanda kurung kurawal {} dan 
+        mendefinisikan pasangan key-value di dalamnya.
+        */
+        let person1 = {};
+        person1["name"] = "Sintya";
+        person1["age"] = 26;
+        person1["isStudent"] = false;
+        person1["hobbies"] = ["Reading", "Coding", "Hiking"];
+        console.table(person1);
+
+        // Membuat object dg properties
+        let person = {
+            name: "John Doe",
+            age: 30,
+            isStudent: true,
+            hobbies: ["Reading", "Traveling", "Cooking"],
+        };
+
+        // #Menampilkan Nilai Object
+        console.table(person);
+
+        // #Mengakses Nilai Object
+        document.writeln(`Name: ${person.name}`);
+        document.writeln(`Age: ${person.age}`);
+        document.writeln(`Is Student: ${person.isStudent}`);
+        document.writeln(`Hobbies: ${person.hobbies.join(", ")}`);
+    </script>
+</body>
+</html>

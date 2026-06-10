@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #14</title>
+</head>
+<body>
+    <!-- NaN (Not-a-Number) 
+    Adalah nilai khusus dalam JavaScript yang digunakan untuk 
+    menunjukkan bahwa suatu nilai bukanlah angka yang valid.
+    NaN biasanya muncul sebagai hasil dari operasi matematika 
+    yang tidak valid, seperti pembagian dengan
+    -->
+
+    <script type="text/javascript">
+        let a = 0 / 0; // Hasilnya NaN
+        let b = Math.sqrt(-1); // Hasilnya NaN
+        let c = parseInt("abc"); // Hasilnya NaN
+        let d = 89; // Hasilnya 89
+
+        document.writeln("Nilai a: " + a); 
+        document.writeln("<br>");
+        document.writeln("Nilai b: " + b); 
+        document.writeln("<br>");
+        document.writeln("Nilai c: " + c);
+
+        // isNaN(): untuk memeriksa apakah suatu nilai adalah NaN atau bukan.
+        document.writeln("<br>");
+        document.writeln("Apakah a adalah NaN? " + isNaN(a));
+        document.writeln("<br>");
+        document.writeln("Apakah b adalah NaN? " + isNaN(b));
+        document.writeln("<br>");
+        document.writeln("Apakah c adalah NaN? " + isNaN(c));
+        document.writeln("<br>");
+        document.writeln("Apakah "+ d +" adalah NaN? " + isNaN(d));
+    </script>
+</body>
+</html>

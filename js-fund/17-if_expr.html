@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #17</title>
+</head>
+<body>
+    <!-- If Expression
+    Adalah sebuah ekspresi yang menggunakan operator ternary (?:) 
+    untuk membuat keputusan berdasarkan kondisi tertentu.
+    Struktur umum dari if expression adalah:
+    condition ? expressionIfTrue : expressionIfFalse;
+    Jika condition bernilai true, maka expressionIfTrue akan dieksekusi. 
+    Jika condition bernilai false, maka expressionIfFalse akan dieksekusi.
+    -->
+
+    <script type="text/javascript">
+        let score = 55;
+        let minGrade = 75;
+
+        // if expression
+        if (score >= minGrade) {
+            document.writeln("Kamu Lulus! Karena nilai kamu: " + score);
+        } 
+        // else if expression: Jika kamu ingin menambahkan kondisi tambahan
+        else if (score <= minGrade ) {
+            document.writeln("Kamu Remedial! Karena nilai kamu: " + score);
+        }
+        
+        // else expression: Jika kamu ingin menambahkan kondisi tambahan
+        else {
+            document.writeln("Kamu Tidak Lulus! Karena nilai kamu: " + score);
+        }
+
+    </script>
+</body>
+</html>

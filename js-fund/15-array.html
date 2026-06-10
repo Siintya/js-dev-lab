@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #15</title>
+</head>
+<body>
+    <!-- Type Data Array 
+    Adalah tipe data yang digunakan untuk menyimpan kumpulan 
+    nilai dalam satu variabel. Array dapat menyimpan berbagai 
+    jenis data, termasuk angka, string, objek, dan bahkan array lainnya.
+    Array memiliki indeks yang dimulai dari 0, sehingga elemen 
+    pertama berada pada indeks 0, elemen kedua pada indeks 1, 
+    dan seterusnya.
+    -->
+
+    <script type="text/javascript">
+        // #Mendeklarasikan Array
+        let fruits = ["Apple", "Banana", "Cherry"];
+        let numbers = [1, 2, 3, 4, 5];
+        let mixed = ["Hello", 42, true, null];
+
+        // #Menampilkan Elemen Array
+        document.writeln("Fruits: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2]);
+        document.writeln("<br>");
+        document.writeln("Numbers: " + numbers[0] + ", " + numbers[1] + ", " + numbers[2] + ", " + numbers[3] + ", " + numbers[4]);
+        document.writeln("<br>");
+        document.writeln("Mixed: " + mixed[0] + ", " + mixed[1] + ", " + mixed[2] + ", " + mixed[3]);
+        document.writeln("<br>");
+
+        // #Mengubah Elemen Array
+        fruits[1] = "Blueberry"; 
+        document.writeln("<br>");
+        document.writeln("Updated Fruits: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2]);
+
+        // Menambah Elemen Array
+        fruits.push("Durian");
+        document.writeln("<br>");
+        document.writeln("Added New Fruits: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + ", " + fruits[3]);
+
+        
+        document.writeln("<br>");
+        document.writeln("<br>");
+        /* Operasi Array Lainnya
+        - length: untuk mendapatkan jumlah elemen dalam array.
+        - pop(): untuk menghapus elemen terakhir dari array.
+        - shift(): untuk menghapus elemen pertama dari array.
+        - unshift(): untuk menambahkan elemen baru di awal array.
+        - splice(): untuk menambahkan atau menghapus elemen di posisi tertentu dalam array.
+        */
+        document.writeln("Jumlah Elemen dalam Fruits: " + fruits.length);
+        fruits.pop(); // Menghapus elemen terakhir
+        document.writeln("<br>");
+        document.writeln("Fruits setelah pop: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2]);
+        fruits.unshift("Strawberry"); // Menambahkan elemen di awal array
+        document.writeln("<br>");
+        document.writeln("Fruits setelah unshift: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + ", " + fruits[3]);  
+
+        splice(1, 1, "Mango"); // Mengganti elemen di indeks 1 dengan "Mango"
+        document.writeln("<br>");
+        document.writeln("Fruits setelah splice: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + ", " + fruits[3]);
+
+        // array.push(value): Menambahkan elemen baru di akhir array.
+        document.writeln("<br>");
+        fruits.push("Grapes");
+        document.writeln("Fruits setelah push: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + ", " + fruits[3] + ", " + fruits[4]);
+
+        // array.[index]: Mengakses elemen pada indeks tertentu.
+        document.writeln("<br>");
+        document.writeln("Elemen pada indeks 2: " + fruits[2]);
+
+        // array.[index] = value: Mengubah elemen pada indeks tertentu.
+        fruits[2] = "Pineapple";
+        document.writeln("<br>");
+        document.writeln("Fruits setelah mengubah indeks 2: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + ", " + fruits[3] + ", " + fruits[4]);
+
+        // delete array.[index]: Menghapus elemen pada indeks tertentu (nilai akan menjadi undefined).
+        delete fruits[1];
+        document.writeln("<br>");
+        document.writeln("Fruits setelah delete indeks 1: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + ", " + fruits[3] + ", " + fruits[4]);
+
+    </script>
+</body>
+</html>

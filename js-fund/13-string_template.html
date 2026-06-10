@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #13</title>
+</head>
+<body>
+    <!-- String Template 
+    Adalah fitur dalam JavaScript yang memungkinkan kita untuk menyisipkan ekspresi atau variabel ke dalam string dengan menggunakan tanda backticks (`) dan ${} untuk menandai ekspresi yang akan disisipkan.
+    Contoh penggunaan string template: 
+    let name = "John";
+    let greeting = `Hello, ${name}!`; // Output: Hello, John!
+    -->
+
+    <script type="text/javascript">
+        let name = "Alice";
+        let age = 30;
+        let greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+        document.writeln(greeting);
+        document.writeln("<br>");
+        
+        // Mengambil Variabel dalam String Template
+        let a = 5;
+        let b = 10;
+        let result = `The sum of ${a} and ${b} is ${a + b}.`;
+        document.writeln("<br>" + result);
+
+        // Ekspresi dalam String Template
+        let x = 7;
+        let y = 3;
+        let expressionResult = `The product of ${x} and ${y} is ${x * y}.`;
+        document.writeln("<br>" + expressionResult);
+
+        // Multi-line String Template
+        let multiLine = `This is a multi-line string template.
+        It can span multiple lines without 
+        needing special characters.`;
+        document.writeln("<br>" + multiLine);
+
+        // Konversi String & Number dalam String Template
+        let num1 = 15;
+        let num2 = 5;   
+        let conversionResult = `The division of ${num1} by ${num2} is ${num1 / num2}.`;
+        document.writeln("<br>" + conversionResult);
+
+        // parseInt(): mengonversi string menjadi integer (bilangan bulat)
+        let strNum1 = "20";
+        let strNum2 = "4";
+        let parseIntResult = `The division of ${parseInt(strNum1)} by ${parseInt(strNum2)} is ${parseInt(strNum1) / parseInt(strNum2)}.`;
+        document.writeln("<br>" + parseIntResult);
+
+        // parseFloat(): mengonversi string menjadi float (bilangan desimal)
+        let strFloat1 = "3.14";
+        let strFloat2 = "2.5";
+        let parseFloatResult = `The division of ${parseFloat(strFloat1)} by ${
+            parseFloat(strFloat2)
+        } is ${parseFloat(strFloat1) / parseFloat(strFloat2)}.`;
+        document.writeln("<br>" + parseFloatResult);
+
+        // Number(): mengonversi string menjadi number (baik integer maupun float)
+        let strNum3 = "42";
+        let strNum4 = "3.14";
+        let numberResult = `The sum of ${Number(strNum3)} and ${Number(strNum4)} is ${Number(strNum3) + Number(strNum4)}.`;
+        document.writeln("<br>" + numberResult);    
+
+        // number.toString(): mengonversi number menjadi string
+        let num3 = 100;
+        let num4 = 3.14;
+        let toStringResult = `The string representation of ${num3} is "${num3.toString()}" and the string representation of ${num4} is "${num4.toString()}".`;
+        document.writeln("<br>" + toStringResult);
+    </script>
+</body>
+</html>

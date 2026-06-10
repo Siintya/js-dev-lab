@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #18</title>
+</head>
+<body>
+    <!-- Popup 
+    Adalah jendela kecil yang muncul di atas halaman web untuk menampilkan informasi atau meminta interaksi dari pengguna.
+    Popup dapat digunakan untuk berbagai tujuan, seperti menampilkan pesan peringatan, meminta konfirmasi, atau menampilkan formulir input.
+    JavaScript menyediakan beberapa metode untuk membuat popup, seperti alert(), confirm(), dan prompt().
+    - alert(): Menampilkan pesan peringatan kepada pengguna.
+    - confirm(): Menampilkan pesan konfirmasi dengan opsi OK dan Cancel, dan mengembalikan nilai boolean berdasarkan pilihan pengguna.
+    - prompt(): Menampilkan pesan dan meminta input dari pengguna,
+    -->
+
+    <script type="text/javascript">
+        // Contoh penggunaan alert
+        alert("Selamat datang di pembelajaran JavaScript!");
+
+        // Contoh penggunaan confirm
+        let userResponse = confirm("Apakah kamu ingin melanjutkan?");
+        if (userResponse) {
+            document.writeln("Kamu memilih untuk melanjutkan.");
+        } else {
+            document.writeln("Kamu memilih untuk tidak melanjutkan.");
+        }
+
+        // Contoh penggunaan prompt
+        let userName = prompt("Masukkan nama kamu:");
+        document.writeln("Halo, " + userName + "!");
+    </script>
+</body>
+</html>
