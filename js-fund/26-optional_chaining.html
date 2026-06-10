@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #26</title>
+</head>
+<body>
+    <!-- Optional Chaining Operator 
+    Adalah operator yang digunakan untuk mengakses properti dari 
+    objek yang mungkin undefined atau null.
+    Operator ini menggunakan sintaks sebagai berikut:
+    object?.property
+    -->
+    <script type="text/javascript">
+        const person = {
+            name: "Sintya",
+            age: 30,
+            city: "New York"
+        };
+
+        // Mengakses properti yang ada
+        document.write("Nama: " + person?.name + "<br>");
+        document.write("Usia: " + person?.age + "<br>");
+        document.write("Kota: " + person?.city + "<br>");
+
+        // Mengakses properti yang tidak ada
+        document.write("Jenis Kelamin: " + person?.gender + "<br>");
+
+        // Mengakses properti dari objek yang undefined
+        const car = undefined;
+        document.write("Merk Mobil: " + car?.brand + "<br>");
+        // Mengakses properti dari objek yang null
+        const house = null;
+        document.write("Alamat Rumah: " + house?.address + "<br>");
+    </script>
+</body>
+</html>

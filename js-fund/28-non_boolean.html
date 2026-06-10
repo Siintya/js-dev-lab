@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #28</title>
+</head>
+<body>
+    <!-- Operator Logika di Non-Boolean 
+    Operator logika seperti AND (&&), OR (||), dan NOT (!)
+    bisa digunakan pada nilai non-boolean.
+    Pada JavaScript, operator logika akan mengembalikan nilai 
+    dari operand terakhir yang dievaluasi, bukan hanya true atau false. 
+    -->
+    <script type="text/javascript">
+        // Contoh penggunaan operator AND (&&) pada nilai non-boolean
+        let a = 5;
+        let b = 10;
+        let resultAnd = a && b; // Mengembalikan nilai b karena a adalah truthy
+        document.write("Hasil AND: " + resultAnd + "<br>");
+
+        // Contoh penggunaan operator OR (||) pada nilai non-boolean
+        let c = 0;
+        let d = "Hello";
+        let resultOr = c || d; // Mengembalikan nilai d karena c adalah falsy
+        document.write("Hasil OR: " + resultOr + "<br>");
+
+        // Contoh penggunaan operator NOT (!) pada nilai non-boolean
+        let e = "World";
+        let resultNot = !e; // Mengembalikan false karena e adalah truthy
+        document.write("Hasil NOT: " + resultNot + "<br>");
+        // Contoh penggunaan operator logika dalam kondisi
+        let f = null;
+        if (f || "Default Value") {
+            document.write("Nilai f adalah falsy, menggunakan default value<br>");
+        }
+    </script>   
+</body>
+</html>

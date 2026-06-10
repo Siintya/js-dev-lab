@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #23</title>
+</head>
+<body>
+    <!-- in Operator 
+    Adalah operator yang digunakan untuk memeriksa apakah sebuah properti
+    ada dalam sebuah objek atau tidak. Operator ini mengembalikan 
+    nilai true jika properti tersebut ada dalam objek, 
+    dan false jika tidak ada.
+    -->
+    <script>
+        const person = {
+            name: "Sintya",
+            age: 30,
+            city: "New York"
+        };
+
+        if ("name" in person) {
+            document.write("Properti 'name' ada dalam objek person<br>");
+        } else {
+            document.write("Properti 'name' tidak ada dalam objek person<br>");
+        }
+
+        if ("gender" in person) {
+            document.write("Properti 'gender' ada dalam objek person<br>");
+        } else {
+            document.write("Properti 'gender' tidak ada dalam objek person<br>");
+        }
+
+        // In hanya mengecek properti dalam objek, 
+        // bukan nilai dari properti tsb
+        const car = {
+            brand: "Toyota",
+            model: "Camry",
+            year: 2020
+        };
+        if ("brand" in car) {
+            document.write("Properti 'brand' ada dalam objek car<br>");
+        } else {
+            document.write("Properti 'brand' tidak ada dalam objek car<br>");
+        }
+        if ("color" in car) {
+            document.write("Properti 'color' ada dalam objek car<br>");
+        } else {
+            document.write("Properti 'color' tidak ada dalam objek car<br>");
+        }
+    </script>
+</body>
+</html>

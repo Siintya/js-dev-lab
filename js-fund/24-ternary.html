@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #24</title>
+</head>
+<body>
+    <!-- Ternary Operator 
+    Adalah operator yang digunakan untuk menulis kondisi secara singkat.
+    Ternary operator memiliki sintaks sebagai berikut:
+    condition ? expressionIfTrue : expressionIfFalse
+    -->
+
+    <script type="text/javascript">
+        const age = 17;
+        const isAdult = age >= 18 ? "Dewasa" : "Belum Dewasa";
+        document.write(isAdult + "<br>");
+
+        const score = 50;
+        const grade =   score >= 90 ? "A" :
+                        score >= 80 ? "B" :
+                        score >= 70 ? "C" :
+                        score >= 60 ? "D" : "E";
+        document.write("Grade: " + grade);
+    </script>
+</body>
+</html>

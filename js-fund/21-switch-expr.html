@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #21</title>
+</head>
+<body>
+    <!-- Switch Expression / Switch Statement
+    adalah fitur baru yang diperkenalkan pada JavaScript ES2021, 
+    yang memungkinkan kita untuk menggunakan switch statement 
+    sebagai sebuah expression. Dengan switch expression, 
+    kita dapat mengembalikan nilai langsung dari switch statement, 
+    sehingga membuat kode lebih ringkas dan mudah dibaca. 
+    -->
+
+    <script type="text/javascript">
+        // Contoh penggunaan switch expression
+        const day = 'Sunday';
+        switch (day) {
+            case 'Monday':
+                document.write('Hari ini adalah Senin');
+                break;
+            case 'Tuesday':
+                document.write('Hari ini adalah Selasa');
+                break;
+            case 'Wednesday':
+                document.write('Hari ini adalah Rabu');
+                break;
+            default:
+                document.write('Hari ini bukan Senin, Selasa, atau Rabu');
+        };
+
+        // Contoh penggunaan switch expression dengan return value
+        const day2 = 'Monday';
+        let message = '';
+        switch (day2) {
+            case 'Monday':
+                message = 'Hari ini adalah Senin';
+                break;
+            case 'Tuesday':
+                message = 'Hari ini adalah Selasa';
+                break;
+            case 'Wednesday':
+                message = 'Hari ini adalah Rabu';
+                break;
+            default:
+                message = 'Hari ini bukan Senin, Selasa, atau Rabu';
+        };
+        document.write('<br>' + message);
+    </script>   
+</body>
+</html>

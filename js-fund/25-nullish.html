@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #25</title>
+</head>
+<body>
+    <!-- Nullish Coalescing Operator 
+    Adalah operator yang digunakan untuk memberikan nilai default
+    pada sebuah variabel jika nilai dari variabel tersebut adalah 
+    null atau undefined.
+    Operator ini menggunakan sintaks sebagai berikut:
+    variable ?? defaultValue
+    -->
+    <script type="text/javascript">
+        let name = null;
+        let defaultName = "Guest";
+        let finalName = name ?? defaultName;
+        document.write("Nama: " + finalName + "<br>");
+
+        let age = undefined;
+        let defaultAge = 18;
+        let finalAge = age ?? defaultAge;
+        document.write("Usia: " + finalAge + "<br>");
+
+        // Jika nilai variabel tidak null atau undefined, maka nilai tersebut yang digunakan
+        let city = "New York";
+        let defaultCity = "Unknown";
+        let finalCity = city ?? defaultCity;
+        document.write("Kota: " + finalCity + "<br>");      
+    </script>
+</body>
+</html>

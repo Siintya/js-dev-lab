@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #32</title>
+</head>
+<body>
+    <!-- Label 
+    Adalah sebuah identifier yang digunakan untuk menandai 
+    sebuah statement atau blok kode. Label biasanya digunakan 
+    bersama dengan statement break atau continue untuk 
+    mengontrol alur eksekusi program. Dengan menggunakan label, 
+    kita dapat keluar dari loop atau blok kode tertentu, 
+    atau melanjutkan ke iterasi berikutnya dalam loop yang 
+    ditandai dengan label tersebut.  
+    -->
+
+    <script type="text/javascript">
+        // Contoh penggunaan label dengan break
+        outerLoop: for (let i = 1; i <= 3; i++) {
+            for (let j = 1; j <= 3; j++) {
+                if (i === 2 && j === 2) {
+                    break outerLoop; // Keluar dari loop luar ketika i dan j sama dengan 2
+                }
+                document.write(`i: ${i}, j: ${j}<br>`);
+            }
+        }
+
+        document.write("<br>");
+
+        // Contoh penggunaan label dengan continue
+        outerLoop2: for (let x = 1; x <= 3; x++) {
+            for (let y = 1; y <= 3; y++) {
+                if (x === 2 && y === 2) {
+                    continue outerLoop2; // Melewati iterasi berikutnya dalam loop luar ketika x dan y sama dengan 2
+                }
+                document.write(`x: ${x}, y: ${y}<br>`);
+            }
+        }
+    </script>   
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #29</title>
+</head>
+<body>
+    <!-- For Loop 
+    Adalah salah satu jenis perulangan yang digunakan untuk menjalankan
+    blok kode tertentu selama kondisi yang ditentukan terpenuhi.
+        Sintaks dasar dari for loop adalah sebagai berikut:
+        for (initialization; condition; increment/decrement) {
+            // blok kode yang akan dijalankan
+        }
+    >>> initialization: digunakan untuk menginisialisasi variabel 
+        yang akan digunakan dalam loop. Biasanya, ini adalah variabel 
+        penghitung yang dimulai dengan nilai awal.
+    >>> condition: adalah ekspresi yang dievaluasi sebelum setiap iterasi.
+        Jika kondisi ini bernilai true, maka blok kode di dalam loop akan 
+        dijalankan. Jika bernilai false, maka loop akan berhenti.
+    >>> increment/decrement: adalah ekspresi yang dijalankan setelah 
+        setiap iterasi. Biasanya, ini digunakan untuk memperbarui 
+        variabel penghitung, seperti menambah atau mengurangi nilainya.
+    -->
+    <script type="text/javascript">
+        // Contoh penggunaan for loop untuk mencetak angka dari 1 hingga 5
+        for (let i = 1; i <= 5; i++) {
+            document.write(i + "<br>");
+        }
+
+        // Contoh penggunaan for loop untuk mencetak elemen dalam array
+        const fruits = ["Apple", "Banana", "Cherry"];
+        for (let j = 0; j < fruits.length; j++) {
+            document.write(fruits[j] + "<br>");
+        }
+        
+        for (let i = 1; i <= 5; i++) {
+            let x = '';
+            for (let j = 1; j <= i; j++) {
+                x += '*';
+            }
+            document.write(x + "<br>");
+        }
+
+        // for loop tanpa henti (infinite loop)
+        // for (; ;) {
+        //     alert("This will run forever!<br>");
+        // }
+
+        // for loop dg kondisi
+        let count = 0;
+        for (; count < 5; count++) {
+            document.write("Count: " + count + "<br>");
+        }
+
+        // for loop dg init statement
+        for (let i = 0; i <= 5;) {
+            document.write("Number: " + i + "<br>");
+            i++; // Increment tambahan untuk melewati angka genap
+        }
+
+        // for loop dg post statement
+        for (let i = 0; i <= 5; i++) {
+            document.write("Loop: " + i + "<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #30</title>
+</head>
+<body>
+    <!-- While Loop 
+    Adalah salah satu jenis perulangan yang digunakan untuk menjalankan
+    blok kode tertentu selama kondisi yang ditentukan terpenuhi.
+        Sintaks dasar dari while loop adalah sebagai berikut:
+        while (condition) {
+            // blok kode yang akan dijalankan
+        }
+    >>> condition: adalah ekspresi yang dievaluasi sebelum setiap iterasi.
+        Jika kondisi ini bernilai true, maka blok kode di dalam loop akan 
+        dijalankan. Jika bernilai false, maka loop akan berhenti.
+    -->
+    <script type="text/javascript">
+        // Contoh penggunaan while loop untuk mencetak angka dari 1 hingga 5
+        let i = 1;
+        while (i <= 5) {
+            document.write(i + "<br>");
+            i++;
+        }
+
+        // Contoh penggunaan while loop untuk mencetak elemen dalam array
+        const fruits = ["Apple", "Banana", "Cherry"];
+        let j = 0;
+        while (j < fruits.length) {
+            document.write(fruits[j] + "<br>");
+            j++;
+        }
+
+        // do-while loop
+        let k = 1;
+        do {
+            document.write("Do-While Loop: " + k + "<br>");
+            k++;            
+        } while (k <= 10);
+
+    </script>
+</body>
+</html>
