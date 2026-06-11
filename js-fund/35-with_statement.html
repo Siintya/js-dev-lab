@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #35</title>
+</head>
+<body>
+    <!-- With Statement 
+    Adalah sebuah pernyataan yg digunakan untuk memperluas 
+    ruang lingkup sebuah blok kode dg objek tertentu. 
+    Statement `with` ini memungkinkan kita untuk mengakses 
+    properti-properti dari objek tersebut tanpa harus menyebutkan 
+    nama objek secara eksplisit setiap kali kita ingin mengakses 
+    propertinya. 
+    --- statement `with` dapat digunakan untuk menyederhanakan kode 
+        yg berulang-ulang mengakses properti dari objek yg sama. 
+        Namun, penggunaan with statement dapat menyebabkan kebingungan 
+        dan kesalahan dalam kode, terutama jika ada variabel dg 
+        nama yg sama di dalam blok kode. Oleh karena itu, penggunaan 
+        with statement tidak disarankan dalam praktik pemrograman modern.
+    -->
+    <script type="text/javascript">
+        // Contoh penggunaan With Statement
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        with (person) { 
+            document.writeln(`Name: ${name} <br>`);
+            document.writeln(`Age: ${age} <br>`);
+            document.writeln(`City: ${city} <br>`);
+        }
+    </script>
+</body>
+</html>

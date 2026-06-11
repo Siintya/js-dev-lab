@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #39</title>
+</head>
+<body>
+    <!-- Function Nested (Function di dlm function) 
+    * tidak ada batasa dlm membuat function
+    * termasuk jika ingin membuat function di dlm function (nested)
+    * function yg terdapat didalam function tsb disebut inner function
+    -->
+    <script type="text/javascript">
+        function outer() {
+            function inner() {
+                document.writeln('Hello, World!');
+            }
+
+            inner()
+            inner();
+        }
+
+        outer();
+        inner(); // result ERROR karna tdk bisa diakses dari luar
+    </script>
+</body>
+</html>

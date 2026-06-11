@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #36</title>
+</head>
+<body>
+    <!-- Function 
+    Adalah sebuah blok kode yg dirancang untuk melakukan tugas tertentu.
+    --- Fungsi dapat menerima input dlm bentuk parameter dan dapat 
+        mengembalikan output menggunakan pernyataan return. 
+    --- Fungsi dapat didefinisikan menggunakan kata kunci function, 
+        diikuti dg nama fungsi, daftar parameter dlm tanda kurung, 
+        dan blok kode dlm tanda kurung kurawal. 
+    --- Fungsi dapat dipanggil dg menyebutkan nama fungsi 
+        diikuti dg tanda kurung, dan jika diperlukan, argumen yg
+        sesuai dg parameter yg didefinisikan.
+    -->
+    <script type="text/javascript">
+        // Contoh penggunaan Function
+        function sayHello(name) {
+            return `Hello, ${name}!`;
+        }
+
+        const message = sayHello("Sintya");
+        document.writeln(message);
+
+        // Function dg parameter default
+        function greet(name = "Guest") {
+            return `Welcome, ${name}!`;
+        }
+        const greeting1 = greet("Dewa");
+        const greeting2 = greet();
+        document.writeln(`<p>${greeting1}</p>`);
+        document.writeln(`<p>${greeting2}</p>`);
+
+        // function returning a value
+        function add(a, b) {
+            return a + b;
+        }
+        const sum = add(5, 3);
+        document.writeln(`<p>Sum: ${sum}</p>`);
+
+        // function return value lebih dari satu
+        function calculate(a, b) {
+            if (b === 0) {
+                return { error: "Division by zero is not allowed." };
+            }
+            return {
+                sum: a + b,
+                difference: a - b,
+                product: a * b,
+                quotient: a / b
+            };
+        }
+        const result = calculate(10, 5);
+        if (result.error) {
+            document.writeln(`<p>${result.error}</p>`);
+        } else {
+            document.writeln(`<p>Sum: ${result.sum}</p>`);
+            document.writeln(`<p>Difference: ${result.difference}</p>`);
+            document.writeln(`<p>Product: ${result.product}</p>`);
+            document.writeln(`<p>Quotient: ${result.quotient}</p>`);
+        }
+
+        // Menghentikan eksekusi fungsi menggunakan return
+        function checkNumber(num) {
+            // Jika num negatif, hentikan eksekusi fungsi dan kembalikan
+            // pesan error
+            if (num < 0) {
+                return "Negative number is not allowed.";
+            }
+            return `The number is ${num}.`;
+        }
+        const check1 = checkNumber(-5);
+        document.writeln(`<p>${check1}</p>`);
+
+        // Optional Parameter
+        function multiply(a, b = 1) {
+            return a * b;
+        }
+        const product1 = multiply(5, 4); // 20
+        const product2 = multiply(5);    // 5 (b menggunakan nilai default 1)
+        document.writeln(`<p>Product 1: ${product1}</p>`);
+        document.writeln(`<p>Product 2: ${product2}</p>`);
+
+        /* >> Rest Parameter: fitur ini memungkinkan kita untuk
+        mengirim data dlm jumlah yg tidak terbatas ke dlm sebuah fungsi.
+        */
+        function sumAll(...numbers) {
+            return numbers.reduce((total, num) => total + num, 0);
+        }
+        const totalSum = sumAll(1, 2, 3, 4, 5); // 15
+        document.writeln(`<p>Total Sum: ${totalSum}</p>`);  
+
+        /* >> Spread syntax: 
+        fitur ini memungkinkan kita untuk 
+        menyebarkan elemen-elemen dari sebuah array atau 
+        objek ke dlm elemen-elemen individu.
+        */
+        function sumNumbers(name, ...numbers) {
+            // reduce(): menjumlahkan semua angka dlm array numbers
+            const total = numbers.reduce((total, num) => total + num, 0);
+            return `${name}, the total sum is ${total}.`;
+        }
+        const resultSum = sumNumbers("Sintya", ...[1, 2, 3]);
+        document.writeln(`<p>${resultSum}</p>`);
+        // Hasil: Sintya (6) -->"Sintya, the total sum is 6."
+
+        /* >> Arguments Object: 
+        fitur dimana kita bisa mengakses semua parameter 
+        dlm bentuk objek arguments, dg menggunakan object bernama 
+        arguments.
+        */
+        function oldSum() {
+            let total = 0;
+            for (const item of arguments) {
+                total += item;
+            }
+            console.info(`Total: ${total}`);
+        }
+        oldSum(1, 2, 3, 4, 5, 6, 7, 8, 9); // Total: 45
+
+        
+
+
+
+    </script>
+</body>
+</html>

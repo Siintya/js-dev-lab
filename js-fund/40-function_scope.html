@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #40</title>
+</head>
+<body>
+    <!-- Scope 
+    adalah area akses sebuah data, dibagi 2 jenis:
+    --- global scope: bisa di akses dari local scope
+    --- local scope: hanya bisa di akses di local scope saja
+    -->
+    <script type="text/javascript">
+        // global scope
+        let number = 50;
+
+        function getNumber() {
+            // local scope 
+            number++;
+        }
+
+        getNumber();
+        document.writeln(number);
+
+        // Contoh penggunaan Local Scope
+        function first() {
+            let firstVariable = "First";
+        }
+
+        function second() {
+            let secondVariable = "Second";
+        }
+
+        first();
+        second();
+
+        // Result ERROR, karna local scope tdk bisa diakses
+        // console.info(firstVariable);
+        // console.info(secondVariable);
+
+        // Contoh penggunaan Nested Function Scope
+        function person() {
+            let name = "Budi";
+
+            function getName(){
+                console.info(name);
+            }
+
+            getName();
+        }
+
+        // Result => Budi (bisa diakses)
+        person();
+    </script>
+</body>
+</html>

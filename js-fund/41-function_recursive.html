@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #41</title>
+</head>
+<body>
+    <!-- Recursive Function 
+    adalah function yg memanggil dirinya sendiri sampai 
+    kondisi tertentu terpenuhi.
+    Contoh penulisan:
+    function recursive() {
+        // kondisi berhenti (base case)
+
+        recursive(); // memanggil dirinya sendiri
+    }
+    -->
+    <script type="text/javascript">
+        function countdown(value) {
+            document.writeln(value + "<br>");
+
+            if (value === 1) {
+                return;
+            }
+
+            countdown(value - 1);
+        }
+        countdown(5);
+        /* Proses yg terjadi ketika running countdown(5);
+        countdown(5)
+            └─ countdown(4)
+                └─ countdown(3)
+                    └─ countdown(2)
+                        └─ countdown(1)
+        */
+
+        // Factorial Loop
+        function factorial(value) {
+            let result = 1;
+            for (let x = 1; x <= value; x++) {
+                let total = result *= x;
+                document.writeln(`${result} * ${x} = ${total} <br>`);
+            }
+
+            return result
+        }
+        factorial(5);
+        document.writeln("<br>");
+        
+        // Factorial Recursive
+        function factorialRecursive(value) {
+            if (value == 1) {
+                return 1;
+            } else {
+                return value * factorialRecursive(value - 1);
+            }
+        }
+        document.writeln(factorialRecursive(5));
+        
+    </script>
+
+
+</body>
+</html>

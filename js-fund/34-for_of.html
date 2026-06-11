@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #34</title>
+</head>
+<body>
+    <!-- For...Of Loop 
+    Adalah sebuah perulangan yg digunakan untuk mengiterasi 
+    nilai-nilai dari sebuah iterable, seperti array atau string. 
+    --- For...Of Loop memungkinkan kita untuk mengakses setiap nilai 
+        dalam iterable secara berurutan. Dalam setiap iterasi, variabel 
+        yg dideklarasikan dlm for...of akan berisi nilai dari elemen 
+        yg sedang diakses. 
+    --- for ...of tidak dapat digunakan untuk 
+        mengiterasi properti-properti dari sebuah objek, karena objek 
+        tidak dianggap sebagai iterable.
+    -->
+
+    <script type="text/javascript">
+        // Contoh penggunaan For...Of Loop dengan array
+        const fruits = ["apple", "banana", "orange"];
+        for (const fruit of fruits) {
+            document.writeln(fruit);
+        }
+        document.writeln("<br>");
+
+        // Contoh penggunaan For...Of Loop dengan string
+        const message = "Hello, World!";
+        for (const char of message) {
+            document.writeln(`<p>${char}</p>`);
+        }
+
+        // Contoh penggunaan For...Of Loop dengan objek 
+        // (tidak dapat digunakan)
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        // for (const key of person) {
+        //     document.writeln(key);
+        // }
+
+        // Contoh penggunaan For...Of Loop dg objek menggunakan Object.keys()
+        // Object.keys() digunakan untuk mendapatkan array dari 
+        // properti yg dapat diiterasi menggunakan for...of
+        for (const key of Object.keys(person)) {
+            document.writeln(`${key}: ${person[key]}`);
+        }
+    </script>
+</body>
+</html>

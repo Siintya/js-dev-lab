@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #33</title>
+</head>
+<body>
+    <!-- For...In Loop 
+    Adalah sebuah perulangan yg digunakan untuk mengiterasi 
+    properti-properti dari sebuah objek. For...In Loop memungkinkan 
+    kita untuk mengakses setiap properti dlm objek secara berurutan. 
+    Dalam setiap iterasi, variabel yg dideklarasikan dlm
+    for...in akan berisi nama properti yg sedang diakses, dan 
+    kita dapat menggunakan nama properti tersebut untuk mengakses 
+    nilai dari properti tersebut. For...In Loop sangat berguna ketika kita ingin melakukan operasi pada setiap properti dalam sebuah objek, seperti mencetak nilai atau memodifikasi nilai dari properti tersebut.
+    -->
+
+    <script type="text/javascript">
+        const person = {
+            name: "John",   
+            age: 30,
+            city: "New York"
+        };
+
+        for (const key in person) {
+            document.writeln(key + ": " + person[key]);
+        }
+    </script>
+</body>
+</html>

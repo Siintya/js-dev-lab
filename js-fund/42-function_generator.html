@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #42</title>
+</head>
+<body>
+    <!-- Funtion Generator 
+    --- adalah funtion yg digunakan untuk membuat data generator.
+    --- generator adalah data yg bisa di interasi seperti Array.
+    --- untuk buat generator, menggunakan tanda bintang (*) setelah
+        kata function:
+        function* nama_function() {
+            ...
+        }
+    --- untuk mengembalikan data di tiap iterasi gunakan keywords `yield`
+    -->
+    <script type="text/javascript"> 
+        // Contoh penggunaan function generator sederhana
+        function* createsNames() {
+            yield "Zainuddin";
+            yield "Hayati";
+            yield "Ammar";
+        }
+
+        const names = createsNames();
+        for (const name of names) {
+            document.writeln(`${name}<br>`);
+        }
+        document.writeln("<br>");
+
+        // Contoh penggunaan function generator kompleks
+        // case: generator angka ganjil
+        function* getNumbers(value) {
+            for (let x = 1; x <= value;) {
+                if (x % 2 === 1) {
+                    yield x;
+                }
+                x++;
+            }
+        }
+
+        const number = getNumbers(20);
+        for (const num of number) {
+            document.writeln(`${num}<br>`);
+        }
+        document.writeln("<br>");
+
+        /* >> Lazy Evaluation
+        Generator itu sifatnya lazy, artinya Data dibuat saat diminta, 
+        bukan saat generator dibuat. Ini sangat cocok untuk 
+        menangani data besar.
+        */
+        function* generateEvenNumber(max) {
+            for (let x = 1; x <= max; x++) {
+                if (x % 2 === 0) {
+                    yield x;
+                }
+            }
+        }
+
+        const evenNumber = generateEvenNumber(20);
+        for (const even of evenNumber) {
+            document.writeln(`${even}<br>`);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #38</title>
+</head>
+<body>
+    <!-- Anonymous Function (function tanpa nama.)
+    Anonymous Function tidak bisa berdiri sendiri seperti itu karena 
+    JavaScript tidak tahu bagaimana menggunakannya. Biasanya 
+    Anonymous Function disimpan ke dalam variabel atau 
+    digunakan sebagai parameter.
+    -->
+    <script type="text/javascript">
+        // anonymous function di variable
+        const sayHello = function () {
+            document.writeln("Hello");
+        };
+        sayHello();
+        document.writeln("<br>");
+
+        // anonymous function di parameter
+        function giveMeName(callback) {
+            callback("Budi");
+        }
+
+        giveMeName(function (name) {
+            document.writeln(`Hello, ${name}!`);
+        })
+    </script>
+</body>
+</html>
