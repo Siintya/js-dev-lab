@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #45</title>
+</head>
+<body>
+    <!-- Closure 
+    adalah mekanisme yg membuat sebuah function "mengingat" 
+    lingkungan tempat ia dibuat, meskipun lingkungan tersebut 
+    sudah selesai dieksekusi.
+    *** closure terjadi ketika:
+        1. Sebuah function dibuat di dlm function lain.
+        2. Function dlm mengakses variabel dari function luar.
+        3. Function luar sudah selesai dieksekusi.
+        4. Variabel tersebut tetap dapat diakses oleh function dlm.
+    *** closure sering muncul pada event handler, callback, 
+        factory function, module pattern.
+    -->
+    <button id="btnClick">Klik Saya</button><br>
+    <script type="text/javascript">
+        function createAdder(value) {
+            const owner = "Teddy";
+            function add(param) {
+                console.info(owner);
+                return value + param;
+            }
+
+            return add;
+        }
+
+        const addTwo = createAdder(2);
+        document.writeln(addTwo(10));
+        document.writeln(addTwo(30));
+        document.writeln("<br>");
+
+        // closure sederhana
+        function outer() {
+            const name = "sintya";
+            function inner() {
+                document.writeln(name);
+            }
+            return inner;
+        }
+        // Function outer() selesai dieksekusi.
+        const hi = outer();
+        hi(); // output: sintya
+        /* proses yg terjadi
+        outer()
+            │
+            ├── name = "Sintya"
+            │
+            └── inner()
+                │
+                └── masih ingat variabel name
+        Meskipun outer() sudah selesai, inner() tetap memiliki akses ke name.
+        */
+        document.writeln("<br>");
+
+        // closure return value number
+        function createCounter() {
+            let counter = 0;
+            return function () {
+                counter++;
+                return counter;
+            };
+        }
+        const increment = createCounter();
+        document.writeln(increment()); // 0+1 = 1
+        document.writeln(increment()); // 1+1 = 2
+        document.writeln(increment()); // 2+1 = 3
+        document.writeln(increment()); // 3+1 = 4
+        document.writeln(increment()); // 4+1 = 5
+        document.writeln("<br>");
+
+        // closure dg parameter
+        function multiply(multiplier) {
+            return function (value) {
+                return value * multiplier;
+            };
+        }
+        const double = multiply(6);
+        const triple = multiply(8);
+        document.writeln(double(5)); // 6*5 = 30
+        document.writeln(triple(9)); // 8*9 = 72
+        document.writeln("<br>");
+
+        // closure pada event handler
+        const button = document.getElementById("btnClick");
+        button.addEventListener("click", function () {
+            alert("Hello, World!");
+        });
+        document.writeln("<br>");
+
+        // closure pada callback
+        
+        // closure pada factory function
+
+        // closure pada module pattern
+    </script>
+</body>
+</html>

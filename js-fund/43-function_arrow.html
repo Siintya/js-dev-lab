@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #43</title>
+</head>
+<body>
+    <!-- Arrow Function 
+    >>> merupakan cara penulisan fungsi yg lebih singkat dan modern 
+        di JavaScript, diperkenalkan pada ES6 (ECMAScript 2015).
+    >>> Namun terdapat limitasi dan juga tidak bisa digunakan di semua situasi
+    >>> cocok untuk ...
+        * callback function
+        * map()
+        * filter()
+        * Promise
+        * Function sederhana
+    -->
+
+    <script type="text/javascript">
+        const sayHi = (name) => {
+            const say = `Hi, ${name}!`;
+            document.writeln(say);
+        }
+        sayHi("Sintya");
+        document.writeln("<br>");
+
+        // arrow function tanpa block, (hanya 1 baris)
+        const greeting = (name) => document.writeln(`Welcome, ${name}!`);
+        greeting("sintya");
+        document.writeln("<br>");
+
+        // arrow function return value (bisa mengembalikan value)
+        const result = (x, y) => x * y;
+        document.writeln(result(3, 6));
+        document.writeln("<br>");
+
+        // arrow function tanpa kurung parameter (hanya 1 parameter)
+        const days = d => document.writeln(`Today is ${d}.`);
+        days("Saturday");
+        document.writeln("<br>");
+
+        // arrow function sbg parameter
+        // karna function sama seperti anonymous function
+        // jadi, bisa digunakan sbg paramater
+        function favFood(callback) {
+            callback("Bakso");
+        }
+        favFood((food) => document.writeln(`My favorite food is ${food}.`));
+        document.writeln("<br>");
+    </script>
+</body>
+</html>

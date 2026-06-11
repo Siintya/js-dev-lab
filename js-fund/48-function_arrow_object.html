@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #48</title>
+</head>
+<body>
+    <!-- Arrow Function di Object 
+    --- arrow Function bukan pengganti Function Biasa 100%.
+    --- ada beberapa fitur JavaScript yang tidak didukung oleh Arrow Function.
+    --- jika di dalam function ada `this`, hampir selalu gunakan Function 
+        Biasa (function) atau Method Shorthand (sayHello() {}), 
+        jangan Arrow Function.
+    -->
+    <script type="text/javascript">
+        const person = {
+            name: "Tere",
+            sayHi: (name) => {
+                document.writeln(`Hi, ${name}!`)
+            }
+        }
+        person.sayHi("Sinta");
+
+        // `this` di arrow function object
+        const people = {
+            name: "Tina",
+            greeting: (name) => {
+                console.info(this); // Window
+                console.info(`Welcome, ${name}! My Name is ${this.name}`);
+            }
+        };
+        people.greeting("Diky"); // Welcome, Diky! My Name is 
+    </script>
+</body>
+</html>

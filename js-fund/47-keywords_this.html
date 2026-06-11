@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #47</title>
+</head>
+<body>
+    <!-- Keywords `this` 
+    konsep `this` memang salah satu materi JavaScript yg paling 
+    sering membuat bingung. Penyebabnya karena nilai `this` tidak 
+    ditentukan saat function dibuat, tetapi saat function dipanggil.
+    Jadi, `this` adalah object yang memanggil function.
+    -->
+
+    <script type="text/javascript">
+        // `this` di global scope
+        console.info(this); // output: Window ...
+
+        // `this` di function
+        function testThis() {
+            console.info(this); // output: Window ...
+        }
+        testThis();
+
+        // `this` di object method
+        const person = {
+            name: "Dino",
+            sayHi: function (name) {
+                // this = person
+                document.writeln(`Hi ${name}, my name is ${this.name}.`);
+            }
+        }
+        person.sayHi("Rendi");
+    </script>
+</body>
+</html>

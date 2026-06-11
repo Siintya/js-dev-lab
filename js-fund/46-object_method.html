@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #46</title>
+</head>
+<body>
+    <!-- Object Method 
+    --- sebenarnya function juga merupakan tipe data, maka 
+        function bisa ditambahkan sebagai property di object
+    --- cara pembuatannya pun sama dg function sbg value
+    -->
+    <script type="text/javascript">
+        // object dg method
+        const person = {
+            name: "Deva",
+            sayHi: function (name) {
+                alert(`Hi ${name}`);
+            }
+        }
+        person.sayHi("Siti");
+
+        // menambah method ke object
+        person.greeting = function (name) {
+            alert(`Welcome, ${name}!`);
+        }
+        person.greeting("Dina");
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #44</title>
+</head>
+<body>
+    <!-- Limitasi pada Arrow Function
+    arrow function memiliki beberapa limitasi yg perlu dipahami. 
+    Banyak developer pemula menganggap Arrow Function hanya versi singkat 
+    dari function biasa, padahal ada beberapa perilaku yg berbeda.
+    -->
+    <button id="btnClick">Klik Saya</button><br>
+    <script type="text/javascript">
+        /** #1.tidak memiliki `this` sendiri, 
+        *** karena arrow function mengambil this dari 
+            scope luar (lexical scope), bukan dari object yg memanggilnya.
+        *** Jika fungsi hanya digunakan sebagai callback atau operasi 
+            sederhana (map, filter, reduce, setTimeout, Promise), 
+            gunakan Arrow Function.
+        *** Jika fungsi membutuhkan this, arguments, new, atau yield, 
+            gunakan Function Biasa (function).
+        **/ 
+        // function biasa    
+        const person = {
+            name: "Tito",
+
+            sayHello: function () {
+                document.writeln(this.name);
+            }
+        };
+        person.sayHello(); // Tito
+        document.writeln("<br>");
+
+        const people = {
+            name: "Tono",
+            sayHi: () => {
+                console.log(this.name);
+            }
+        };
+        people.sayHi(); 
+        // output: undefined, Karena Arrow Function mengambil this 
+        // dari scope luar (lexical scope), bukan dari object yg memanggilnya.
+
+        /** #2.tidak bisa digunakan sebagai constructor
+        Function biasa bisa dipanggil menggunakan new.
+        **/
+        function Car(brand) {
+            this.brand = brand;
+        }
+        const car = new Car("Toyota");
+        console.table(car);
+
+        // sedangakan arrow funtion tdk bisa,
+        const Laptop = (merk) => {
+            this.merk = merk;
+        };
+        // const laptop = new Laptop("Lenovo ThinkPad");
+        // console.log(laptop); // output: Laptop is not a constructor
+
+        /** #3.tidak memiliki object arguments **/
+        // funtion biasa
+        function testFirst() {
+            console.log(arguments);
+        }
+        testFirst(1, 2, 3);
+        
+        // arrow function
+        const testSecond = () => {
+            console.log(arguments);
+        };
+        // testSecond(1, 2, 3); // output: arguments is not defined
+        
+        // Sebagai gantinya gunakan Rest Parameter:
+        const test = (...args) => {
+            console.log(args);
+        };
+        test(1, 2, 3); // output: (3) [1, 2, 3]
+        
+        /* #4.tidak memiliki `super`
+        *** super digunakan untuk mengakses method atau constructor 
+            milik parent class.
+        *** arrow Function tidak memiliki binding super sendiri.
+        *** biasanya ini menjadi masalah saat bekerja dengan 
+            class inheritance jika digunakan secara tidak tepat.
+        */
+        // dlm kasus class ini, method biasa lebih direkomendasikan
+        class Animal {
+            speak() {
+                console.log("Animal");
+            }
+        }
+        // output: 'super' keyword unexpected here
+        // class Cat extends Animal {
+        //     speak() {
+        //         function test() {
+        //             super.speak();
+        //         }
+        //         test();
+        //     }
+        // } 
+
+        /* #5.tidak memiliki `new.target` */
+        // function biasa
+        function Color() {
+            console.log(new.target);
+        }
+        new Color();
+
+        // arrow function
+        // const Person = () => {
+        //     console.log(new.target);
+        // };
+        // output: new.target expression is not allowed here
+
+        /* #6.tidak bisa menjadi generator function */
+        // generator menggunakan function*
+        function* generateNumbers() {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+        // arrow funtion tdk mendukung yield
+        // const generateNumbers = *() => {
+        //     yield 1;
+        // };
+        // output: Identifier 'generateNumbers' has already been declared
+
+        /* #7.kurang cocok sbg method object */
+        // Contoh yang sering menjadi bug:
+        const counter = {
+            count: 0,
+
+            increment: () => {
+                this.count++;
+            }
+        };
+
+        counter.increment();
+        // this.num tidak mengacu ke object total.
+        // Lebih baik:
+        const total = {
+            num: 0,
+
+            increment() {
+                this.num++;
+            }
+        };
+
+        /* #8.sulit digunakan untuk event handler yg membutuhkan `this` */
+        // function biasa
+        const button = document.getElementById("btnClick");
+        button.addEventListener("click", function () {
+            console.log(this);
+        });
+
+        // arrow function
+        const buttonSecond = document.getElementById("btnClick");
+        buttonSecond.addEventListener("click", () => {
+            console.log(this);
+        });
+        // `this` mengacu ke scope luar, bukan button
+
+    </script>
+</body>
+</html>
