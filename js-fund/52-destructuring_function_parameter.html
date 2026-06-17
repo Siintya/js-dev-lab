@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #52</title>
+</head>
+<body>
+    <!-- Destructuring di Function Parameter -->
+    <script type="text/javascript">
+        // penggunaan destructuring di Function Parameter dg data object
+        function display({firstName, middleName, lastName}) {
+            console.info(firstName);
+            console.info(middleName)
+            console.info(lastName);
+        }
+        const data = {
+            firstName: "Devi",
+            middleName: "Putri",
+            lastName: "Prameswari"
+        };
+        display(data);
+
+        // penggunaan destructuring di Function Parameter dg data array
+        function result([first, second, last]) {
+            return first + second * last;
+        }
+
+        document.writeln(result([4, 6, 34]));
+    </script>
+</body>
+</html>

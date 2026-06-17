@@ -7,7 +7,42 @@
 </head>
 <body>
     <!-- Getter dan Setter 
+    adalah kemampuan membuat function yg berbeda untuk mengambil
+    (Getter) & mengubah (Setter) data/nilai pada sebuah property di 
+    Object. Saat mengakses properti tersebut, fungsi getter akan 
+    otomatis dieksekusi di belakang layar.
+    --- Menggunakan kata kunci get.
+    --- Tidak boleh menerima parameter/argumen.
+    --- Harus mengembalikan (return) suatu nilai.
     
+    Saat memberikan nilai baru ke properti tersebut 
+    (menggunakan operator =), fungsi setter akan dieksekusi.
+    --- Menggunakan kata kunci set.
+    --- Harus menerima tepat satu parameter (yaitu nilai baru 
+        yang dimasukkan).
     -->
+    <script type="text/javascript">
+        const person = {
+            firstName: "Tata",
+            lastName: "Dwi",
+            // getter
+            get fullName() {
+                return `${this.firstName} ${this.lastName}`;
+            },
+            // setter
+            set fullName(value) {
+                const array = value.split(" ");
+                this.firstName = array [0];
+                this.lastName = array [1];
+            }
+        }
+
+        // person.firstName = "Devi";
+        person.fullName = "Sandy Ayu";
+        console.table(person);
+
+        person.fullName = "Putri Siska";
+        console.table(person);
+    </script>
 </body>
 </html>

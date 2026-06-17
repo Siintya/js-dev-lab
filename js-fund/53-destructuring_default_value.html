@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #53</title>
+</head>
+<body>
+    <!-- Destructuring: Default Value 
+    kita bisa menambahkan default value, jika ternyata data array 
+    atau object kosong/tidak data
+    -->
+    <script type="text/javascript">
+        // default value destructing object
+        const person = ["Doni", "Oky"];
+        const [firstPerson, middlePerson, lastPerson = "Unknown"] = person;
+
+        console.info(firstPerson);
+        console.info(middlePerson);
+        console.info(lastPerson);
+
+        // default value destructing array
+        const names = {
+            firstName: "Hindia",
+            lastName: "Baskara"
+        };
+
+        const {firstName, middleName = "Putra", lastName} = names;
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+    </script>
+</body>
+</html>

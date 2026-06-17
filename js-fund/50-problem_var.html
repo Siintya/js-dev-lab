@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript #50</title>
+</head>
+<body>
+    <!-- Masalah Variable var 
+    Berikut adalah masalah-masalah utama yang dimiliki oleh variabel var:
+    --- Tidak Mengenal Block Scope (Hanya Function Scope)
+        Variabel var tidak peduli dengan cakupan blok (seperti di dalam 
+        if, for, atau while). var hanya tunduk pada Function Scope 
+        (jika di dalam fungsi) atau Global Scope (jika di luar fungsi).
+        Artinya, jika Anda membuat variabel var di dalam blok if, 
+        variabel tersebut masih bisa diakses dan diubah dari luar 
+        blok if tersebut.
+    --- Masalah Hoisting yang Membingungkan
+        Hoisting adalah perilaku JavaScript yang menarik dekorasi variabel 
+        ke bagian paling atas dari ruang lingkupnya (scope) sebelum 
+        kode dijalankan.
+        Namun, pada var, hanya deklarasinya saja yang diangkat, 
+        nilainya tidak. Nilainya akan otomatis diinisialisasi sebagai 
+        undefined.
+    --- Bisa Dideklarasikan Ulang Tanpa Error (Redeclaration)
+        Dengan var, Anda bisa membuat variabel dengan nama yang sama 
+        persis berulang kali di dalam lingkup yang sama tanpa memicu error.
+    -->
+    <script type="text/javascript">
+        let i = 20;
+        for (let i = 0; i < 10; i++) {
+            // local scope
+            console.info(`Local ${i} dg let`);
+        }
+        // Global scope
+        console.info(`Global ${i} dg let`); // Global 20 dg let
+
+        var x = 20;
+        for (var x = 0; x < 10; x++) {
+            // local scope
+            console.info(`Local ${x} dg var`);
+        }
+        // Global scope
+        console.info(`Global ${x} dg var`); // Global 10 dg var
+    </script>
+</body>
+</html>
