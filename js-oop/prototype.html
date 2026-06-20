@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // construction function
+        function Employee(firstName, lastName) {
+            // property 
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = (name) => {
+                document.writeln(`Hello ${name}, My name is ${this.firstName}`);
+            }
+
+        }
+
+        const budi = new Employee("Budi", "Nugraha");
+        budi.sayBye = function() {
+            console.info("Good Bye");
+        }
+        console.log(budi);
+    </script>
+</body>
+</html>

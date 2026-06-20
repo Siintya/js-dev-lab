@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter di construction function</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // contoh penggunaan construction function dg parameter
+        function Person(firstName, lastName) {
+            // property di construction function
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = (name) => {
+                document.writeln(`Hello ${name}, My name is ${this.firstName}`)
+            }
+        }
+
+        // Instansiasi Objek (new)
+        const rudi = new Person("Rudi", "Saputra");
+
+        // method (function)
+        rudi.sayHello("Tono");
+
+        document.writeln(`<br>${rudi.firstName} ${rudi.lastName}`);
+        console.log(rudi);
+    </script>
+</body>
+</html>

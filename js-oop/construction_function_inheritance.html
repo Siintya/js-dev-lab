@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>construction inheritance function</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // construction function
+        function Employee(firstName) {
+            // property 
+            this.firstName = firstName;
+            this.sayHello = (name) => {
+                document.writeln(`Hello ${name}, My name is ${this.firstName}`);
+            }
+
+        }
+
+        function Manager(firstName, lastName) {
+            // property
+            this.lastName = lastName;
+
+            // inheritance
+            Employee.call(this, firstName);
+        }
+
+        const budi = new Manager("Budi", "Nugraha");
+        budi.sayHello("Tono");
+        console.info(budi);
+    </script>
+</body>
+</html>

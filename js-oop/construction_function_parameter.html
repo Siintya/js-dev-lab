@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // contoh penggunaan construction function
+        function Person() {
+            // property di construction function
+            this.firstName = "";
+            this.lastName = "";
+            this.sayHello = (name) => {
+                document.writeln(`Hello ${name}, My name is ${this.firstName}`)
+            }
+        }
+
+        // Instansiasi Objek (new)
+        const budi = new Person();
+
+        budi.firstName = "Budi";
+        budi.lastName = "Nugraha";
+        budi.sayHello("Joko");
+
+        document.writeln(`<br>${budi.firstName} ${budi.lastName}`);
+        console.log(budi);
+    </script>
+</body>
+</html>
