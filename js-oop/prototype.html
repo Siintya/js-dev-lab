@@ -8,7 +8,7 @@
 <body>
     <script type="text/javascript">
         // construction function
-        function Employee(firstName, lastName) {
+        function Person(firstName, lastName) {
             // property 
             this.firstName = firstName;
             this.lastName = lastName;
@@ -17,12 +17,23 @@
             }
 
         }
-
-        const budi = new Employee("Budi", "Nugraha");
-        budi.sayBye = function() {
+        Person.prototype.sayBye = function() {
             console.info("Good Bye");
         }
+
+        Person.prototype.run = function() {
+            console.info(`${this.firstName} is running`)
+        }
+
+        const budi = new Person("Budi", "Nugraha");
+        budi.sayBye = function () {
+            document.writeln("Sampai Jumpa!");
+        }
         console.log(budi);
+
+        // akses prototype
+        budi.sayBye();
+        budi.run();
     </script>
 </body>
 </html>
