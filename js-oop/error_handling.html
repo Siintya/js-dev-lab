@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR Handling</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class MathUtil {
+            static sum(...numbers) {
+                if (numbers.length <= 1) {
+                    // Throw Error
+                    throw new Error("Total parameter harus lebih dari 0");
+                }
+
+                let result = 0;
+                for (const number of numbers) {
+                    result += number;
+                }
+                return result;
+            }
+        }
+
+        // Error Handling
+        try {
+            // data yg akan diuji
+            console.info(MathUtil.sum());
+            console.info("Kode Block Try Akan Berhenti");
+        } catch (error) {
+            // display message error
+            console.error(`Terjadi error: ${error.message}`);
+        } finally {
+            console.info("Kode Program Selesai");
+        }
+    </script>
+</body>
+</html>

@@ -10,7 +10,7 @@
         class Employee{
 
         }
-        class Manager{
+        class Manager extends Employee{
 
         }
 
@@ -20,9 +20,11 @@
         console.info(typeof budi);
         console.info(typeof toni);
 
-        console.info(budi instanceof Employee);
-        console.info(toni instanceof Employee);
-        
+        console.info(budi instanceof Employee); // true
+        console.info(budi instanceof Manager); // false
+
+        console.info(toni instanceof Employee); // true
+        console.info(toni instanceof Manager); // true
     </script>
 </body>
 </html>

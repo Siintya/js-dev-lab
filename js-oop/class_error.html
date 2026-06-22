@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class ValidationError extends Error {
+            constructor(message, field) {
+                super(message);
+                this.field = field;
+            }
+        }
+
+        class MathUtil {
+            static sum(...numbers) {
+                if (numbers.length <= 1) {
+                    // Throw Error
+                    throw new ValidationError("Total parameter harus lebih dari 0", "numbers");
+                }
+
+                let result = 0;
+                for (const number of numbers) {
+                    result += number;
+                }
+                return result;
+            }
+        }
+
+        // Error Handling
+        try {
+            // data yg akan diuji
+            console.info(MathUtil.sum());
+            console.info("Kode Block Try Akan Berhenti");
+        } catch (error) {
+            // display message error
+            if (error instanceof ValidationError) {
+                console.info(`Terjadi error di field ${error.field} dengan error ${error.message}`);
+            } else {
+                console.info(`Terjadi error: ${error.message}`);
+            }
+        } finally {
+            console.info("Program Selesai");
+        }
+    </script>
+</body>
+</html>
