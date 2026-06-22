@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator InstanceOf</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class Employee{
+
+        }
+        class Manager{
+
+        }
+
+        const budi = new Employee();
+        const toni = new Manager();
+
+        console.info(typeof budi);
+        console.info(typeof toni);
+
+        console.info(budi instanceof Employee);
+        console.info(toni instanceof Employee);
+        
+    </script>
+</body>
+</html>
