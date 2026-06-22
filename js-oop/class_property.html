@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class: Property</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class Person {
+
+            // penggunaan constructor function di Class
+            constructor(name) {
+                // penggunaan property di Class
+                this.name     = name;
+                this.sayHello = (data) => {
+                    document.writeln(`Hello ${data}! My name is ${name}`)
+                }
+            }
+        }
+
+        const della = new Person("Della");
+        della.sayHello("Tika");
+        console.info(della.name);
+    </script>
+</body>
+</html>
